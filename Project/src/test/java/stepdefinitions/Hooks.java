@@ -33,6 +33,7 @@ public class Hooks extends Base {
     @Before
     public  void open(){
         openBrowser();
+        driver.navigate().refresh();
     }
     /*  
         A. Method name : close
