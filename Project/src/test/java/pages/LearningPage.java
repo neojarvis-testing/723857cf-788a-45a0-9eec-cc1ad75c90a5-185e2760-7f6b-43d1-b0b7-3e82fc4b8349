@@ -1,9 +1,12 @@
 package pages;
 
-import org.testng.Assert;
+import org.junit.Assert;
+
+// import org.testng.Assert;
 
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
+
 
 import uistore.HomePageLocators;
 import uistore.LearningPageLocators;
@@ -51,7 +54,7 @@ public class LearningPage {
     public void verifyHomePageUrl(){
         try {
             String url=Base.driver.getCurrentUrl();
-            Assert.assertTrue(url.equals(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 5, 0)));
+            Assert.assertTrue(url.equals(ExcelReader.readData(System.getProperty("user.dir")+"/testdata/ELCData.xlsx", "Sheet1", 5, 0)));
             
             test.log(Status.PASS, "Verified HomePage Url");
             LoggerHandler.info("Verified HomePage Url");
@@ -118,7 +121,7 @@ public class LearningPage {
     {
         try {
             String url=Base.driver.getCurrentUrl();
-            Assert.assertTrue(url.contains(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 6, 0)));
+            Assert.assertTrue(url.contains(ExcelReader.readData(System.getProperty("user.dir")+"/testdata/ELCData.xlsx", "Sheet1", 6, 0)));
             test.log(Status.PASS, "Contains creativity");
             LoggerHandler.info("Contains creativity");
         } catch (Exception e) {
@@ -204,7 +207,7 @@ public class LearningPage {
     {
         try {
             String text=helper.getText(LearningPageLocators.verifyminutes);
-            Assert.assertTrue(text.contains(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 6, 1)));
+            Assert.assertTrue(text.contains(ExcelReader.readData(System.getProperty("user.dir")+"/testdata/ELCData.xlsx", "Sheet1", 6, 1)));
             test.log(Status.PASS, "Verified minutes");
             LoggerHandler.info("Verified minutes");
         } catch (Exception e) {
@@ -265,7 +268,7 @@ public class LearningPage {
     public void verifyChechoutPageUrl(){
         try {
             String url=Base.driver.getCurrentUrl();
-            Assert.assertTrue(url.equals(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 5, 1)));
+            Assert.assertTrue(url.equals(ExcelReader.readData(System.getProperty("user.dir")+"/testdata/ELCData.xlsx", "Sheet1", 5, 1)));
            
             test.log(Status.PASS, "Verified Creativity Page Url");
             LoggerHandler.info("Verified Creativity Page Url");
