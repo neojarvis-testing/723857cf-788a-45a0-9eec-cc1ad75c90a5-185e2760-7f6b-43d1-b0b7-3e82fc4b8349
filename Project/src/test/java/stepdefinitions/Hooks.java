@@ -1,4 +1,4 @@
-package stepdefinition;
+package stepdefinitions;
  
 import com.aventstack.extentreports.ExtentReports;
  
@@ -32,8 +32,13 @@ public class Hooks extends Base {
     */
     @Before
     public  void open(){
-        openBrowser();
-        driver.navigate().refresh();
+        try {
+            openBrowser();
+            Thread.sleep(500);
+            Base.driver.navigate().refresh();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        };
     }
     /*  
         A. Method name : close
