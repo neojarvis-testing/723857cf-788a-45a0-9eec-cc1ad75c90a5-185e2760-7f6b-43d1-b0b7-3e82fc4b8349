@@ -261,9 +261,10 @@ public class FooterPage {
         try {
             helper.jsScrollIntoView(HomePageLocators.careers);
             helper.wait(HomePageLocators.careers);
+            Thread.sleep(1000);
             helper.clickOnElement(HomePageLocators.careers);
-            test.log(Status.PASS, "click on Careers");
-            LoggerHandler.info("click on Careers");
+            test.log(Status.PASS, "click on careers");
+            LoggerHandler.info("click on careers");
             helper.switchTab();
         } catch (Exception e) {
             System.out.println(e.getMessage());
