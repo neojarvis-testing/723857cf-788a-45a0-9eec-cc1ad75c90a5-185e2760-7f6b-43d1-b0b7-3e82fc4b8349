@@ -321,4 +321,14 @@ public class WebDriverHelper {
             e.printStackTrace();
         }
     }
+    public void jsClick(By locator) {
+        try {
+            WebElement element = driver.findElement(locator);
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("arguments[0].click();", element);
+        } catch (Exception e) {
+            //
+            e.printStackTrace();
+        }
+    }
 }

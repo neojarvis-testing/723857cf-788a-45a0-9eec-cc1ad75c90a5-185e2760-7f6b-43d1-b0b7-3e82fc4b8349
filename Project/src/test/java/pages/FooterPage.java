@@ -419,7 +419,4 @@ public class FooterPage {
             LoggerHandler.error("not captured the elc screenshot");
         }
     }
-
-   
-    
 }
