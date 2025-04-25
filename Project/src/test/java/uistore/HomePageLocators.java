@@ -33,8 +33,19 @@ public class HomePageLocators {
     public static By Outdoortoys=By.xpath("//a[@title='Outdoor Toys']");
     public static By Bikes=By.cssSelector("a[title='Bikes']");
 
+    public static By verifyHome=By.xpath("//a[@title='Present Finder']");
+
+    public static By verifyCreativity=By.xpath("//h1[@class='category-title']");
+
+    public static By verifylearningcheckout=By.xpath("//div[text()='Select Delivery']");
+    public static By verifyoutdoorcheckout=By.xpath("//div[@class='cart-subhead text-left' and text()='Select Delivery']");
+
+    public static By bikeverify=By.xpath("//h1[@class='category-title'and text()='Toddler Bikes']");
+
+    public static By verifysearch=By.xpath("//h1[@class='category-title'and text()='Huffy']");
+
     //ProductPageLocator
-    public static By Huffy=By.cssSelector("a[titsgshle='Huffy']");
+    public static By Huffy=By.cssSelector("a[title='Huffy']");
     public static By ToddlerBike=By.cssSelector("span[class='facet__text']");
     public static By Disney=By.xpath("//span[@class='facet__list__text'and text()='Disney']");
     public static By VerifySearch=By.cssSelector("a[href='/brands']");
