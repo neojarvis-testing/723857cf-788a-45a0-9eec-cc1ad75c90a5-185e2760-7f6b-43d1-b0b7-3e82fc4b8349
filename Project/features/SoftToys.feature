@@ -1,6 +1,6 @@
 Feature: Soft Toys
     Scenario: To add the Soft Toys product to the basket
-        Given I click on Accept Cookies.
+        Given I click on Acccept Cookies.
         When I hover on Type Of Toy.
         And I click on Soft Toys.
         And I verify URL.

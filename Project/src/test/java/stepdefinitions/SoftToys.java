@@ -19,8 +19,8 @@ public class SoftToys {
      * Return Type : void
      * Parameter list : none
      */
-    @Given("I click on Accept Cookies.")
-    public void i_click_on_accept_cookies() {
+    @Given("I click on Acccept Cookies.")
+    public void i_click_on_acccept_cookies() {
         softToysPage.clickAcceptCookies();
     }
 

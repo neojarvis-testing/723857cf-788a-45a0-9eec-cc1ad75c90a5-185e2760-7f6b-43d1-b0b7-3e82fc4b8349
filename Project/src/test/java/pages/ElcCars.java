@@ -67,7 +67,6 @@ public class ElcCars {
             Screenshot.captureScreenShot("Not verified");
         }
     }
-
     /*
      * a.Method Name: clickOnSearchBar
      * b.Author Name: Pratham Maheshwari

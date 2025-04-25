@@ -3,7 +3,7 @@ package uistore;
 import org.openqa.selenium.By;
 
 public class OutdoorPageLocators {
-     public static By Huffy=By.cssSelector("a[titsgshle='Huffy']");
+     public static By Huffy=By.cssSelector("a[title='Huffy']");
     public static By ToddlerBike=By.cssSelector("span[class='facet__text']");
     public static By Disney=By.xpath("//span[@class='facet__list__text'and text()='Disney']");
     

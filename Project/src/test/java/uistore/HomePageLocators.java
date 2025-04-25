@@ -14,7 +14,7 @@ public class HomePageLocators {
     public static By careers=By.cssSelector("a[title='Careers']");
     public static By giftCards = By.cssSelector("li[class='yCmsComponent footer__link'] a[title='Gift cards']");
    // public static By explore=By.cssSelector("a[title='Explore']");
-    
+    //prasanna Locators
     public static By explore=By.xpath("//a[text()='Explore']");
     public static By offers=By.cssSelector("a[title='Offers']");
     public static By searchbar=By.cssSelector("input[class='aa-Input form-control']");
@@ -31,7 +31,7 @@ public class HomePageLocators {
     public static By ElcLogo=By.cssSelector("div[class='banner__component banner']");
     // public static By Outdoortoys=By.cssSelector("a[title='Outdoor Toys']");
     public static By Outdoortoys=By.xpath("//a[@title='Outdoor Toys']");
-    public static By Bikes=By.cssSelector("a[title='Bikes']");
+    public static By Bikes=By.xpath("//a[text()='Bikes']");
 
     public static By verifyHome=By.xpath("//a[@title='Present Finder']");
 
@@ -74,15 +74,7 @@ public static By verifyminutes=By.id("js-store-availability-text");
     // public static By Learningskills=By.cssSelector("span[class='yCmsComponent nav__link js_nav__link'] a[href='/c/learning-skills']");
     // public static By Learningskills=By.xpath("(//a[@href='/c/learning-skills'])[1]");
     // public static By creativity=By.cssSelector("a[href='/c/learning-skills/creativity']");
-    
-
-
-
-
-
-
-
-    
+     
     
     //Akki Manith Locators
     public static By acceptAllCookies=By.cssSelector("button[id='onetrust-accept-btn-handler']");
