@@ -1,9 +1,5 @@
 package pages;
 
-
-
-import java.util.logging.Logger;
-
 import org.junit.Assert;
 
 import com.aventstack.extentreports.ExtentTest;
@@ -13,6 +9,7 @@ import uistore.HomePageLocators;
 import utils.Base;
 import utils.ExcelReader;
 import utils.LoggerHandler;
+import utils.Reporter;
 import utils.Screenshot;
 import utils.WebDriverHelper;
 
@@ -40,8 +37,11 @@ public class Elcfooterverify {
         try {
             helper.wait(HomePageLocators.accept);
             helper.clickOnElement(HomePageLocators.accept);
+            LoggerHandler.info("clicked on accept");
+            test.log(Status.PASS, "clicked on accept");
         } catch (Exception e) {
-            e.printStackTrace();
+            LoggerHandler.error("Not able to accept");
+            test.log(Status.FAIL, "not able to accept");
         }
     }
 
@@ -63,6 +63,7 @@ public class Elcfooterverify {
         } catch (InterruptedException e) {
             LoggerHandler.error("Not able to click on Contact us");
             test.log(Status.FAIL, "Not able to clicks on Contact us");
+            Screenshot.captureScreenShot("Contact us");
         }
     }
 
@@ -104,6 +105,7 @@ public class Elcfooterverify {
         } catch (Exception e) {
             LoggerHandler.error("Not able to click on Delivery option");
             test.log(Status.FAIL, "Not able to click on Delivery options");
+            Screenshot.captureScreenShot("Delivery option");
         }
     }
 
@@ -145,6 +147,7 @@ public class Elcfooterverify {
         } catch (Exception e) {
             LoggerHandler.error("Not able to click on Products Safety Notices");
             test.log(Status.FAIL, "Not able to click on Product Safety Notices");
+            Screenshot.captureScreenShot("Product safety notices");
         }
     }
 
@@ -166,6 +169,7 @@ public class Elcfooterverify {
         } catch (AssertionError e) {
             LoggerHandler.error("Not able to verify Product Safety notices URL");
             test.log(Status.FAIL, "Product Safety notices URL not verified");
+            Screenshot.captureScreenShot("Product safety verification fail");
         }
     }
 
@@ -186,6 +190,7 @@ public class Elcfooterverify {
         } catch (Exception e) {
             LoggerHandler.error("Not able to click on Returns");
             test.log(Status.FAIL, "Not able to click on Return");
+            Screenshot.captureScreenShot("Return");
         }
     }
 
@@ -228,6 +233,7 @@ public class Elcfooterverify {
         } catch (Exception e) {
             LoggerHandler.error("Not able to click on Track your Orders");
             test.log(Status.FAIL, "Not able to click on Track your Order");
+            Screenshot.captureScreenShot("Track your order");
         }
     }
 
@@ -249,6 +255,7 @@ public class Elcfooterverify {
         } catch (AssertionError e) {
             LoggerHandler.error("Not able to verify Track your Order URL");
             test.log(Status.FAIL, "Track your Order URL not verified");
+            Screenshot.captureScreenShot("Track your order verification fail");
         }
     }
 
@@ -270,6 +277,7 @@ public class Elcfooterverify {
         } catch (Exception e) {
             LoggerHandler.error("Not able to click on Help Centre");
             test.log(Status.FAIL, "Not able to click on Help Centres");
+            Screenshot.captureScreenShot("Help center");
         }
     }
 
@@ -291,6 +299,7 @@ public class Elcfooterverify {
         } catch (AssertionError e) {
             LoggerHandler.error("Not able to verify Help Centre URL");
             test.log(Status.FAIL, "Help Centre URL not verified");
+            Screenshot.captureScreenShot("Help centre verification fail");
         }
     }
 
@@ -311,6 +320,7 @@ public class Elcfooterverify {
         } catch (Exception e) {
             LoggerHandler.error("Not able to click on Your Privacy");
             test.log(Status.FAIL, "Not able to click on Your Privacy");
+            Screenshot.captureScreenShot("Privacy policy");
         }
     }
 
@@ -332,6 +342,7 @@ public class Elcfooterverify {
         } catch (AssertionError e) {
             LoggerHandler.error("Not able to verify Your Privacy URL");
             test.log(Status.FAIL, "Your Privacy URL not verified");
+            Screenshot.captureScreenShot("Privacy policy verification fail");
         }
     }
 
@@ -352,6 +363,7 @@ public class Elcfooterverify {
         } catch (Exception e) {
             LoggerHandler.error("Not able to click on How to Complain");
             test.log(Status.FAIL, "Not able to click on How to Complain");
+            Screenshot.captureScreenShot("How to complain");
         }
     }
        
@@ -374,6 +386,7 @@ public class Elcfooterverify {
         } catch (AssertionError e) {
             LoggerHandler.error("Not able to verify How to complain URL");
             test.log(Status.FAIL, "How to complain URL not verified");
+            Screenshot.captureScreenShot("How to complain verification fail");
         }
     }
     /*
@@ -390,11 +403,13 @@ public class Elcfooterverify {
             LoggerHandler.info("Verified Keyword 'About Us'");
             test.log(Status.PASS, "Verified Keyword 'About Us'");
             Base.driver.navigate().back();
+            Screenshot.captureScreenShot("ELC");
+            Reporter.attachScreenshotToReport("Elc", test, "Screenshot attached");
         } catch (AssertionError e) {
             LoggerHandler.error("Not able to verify Keyword 'About Us'");
             test.log(Status.FAIL, "Keyword 'About Us' not verified");
+            Screenshot.captureScreenShot("About us");
         }
     }
     
 }
-

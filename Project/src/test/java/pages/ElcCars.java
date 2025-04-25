@@ -13,6 +13,7 @@ import uistore.HomePageLocators;
 import utils.Base;
 import utils.ExcelReader;
 import utils.LoggerHandler;
+import utils.Reporter;
 import utils.Screenshot;
 import utils.WebDriverHelper;
 
@@ -38,8 +39,12 @@ public class ElcCars {
         try {
             helper.wait(HomePageLocators.accept);
             helper.clickOnElement(HomePageLocators.accept);
+            LoggerHandler.info("clicked on accept");
+            test.log(Status.PASS, "clicked on accept");
         } catch (Exception e) {
-            e.printStackTrace();
+           LoggerHandler.error("Not clicked on accept");
+           test.log(Status.FAIL, "Not clicked on accept");
+           Screenshot.captureScreenShot("Accept");
         }
     }
 
@@ -59,6 +64,7 @@ public class ElcCars {
         } catch (AssertionError e) {
             LoggerHandler.error("Logo not verified");
             test.log(Status.FAIL,"Logo not Verified");
+            Screenshot.captureScreenShot("Not verified");
         }
     }
 
@@ -78,6 +84,7 @@ public class ElcCars {
         } catch (Exception e) {
             LoggerHandler.error("Not able to click on searchBar");
             test.log(Status.FAIL, "Not able to click on searchBar");
+            Screenshot.captureScreenShot("clicking fail");
         }
     }
 
@@ -101,6 +108,7 @@ public class ElcCars {
         } catch (AssertionError | InterruptedException e) {
             LoggerHandler.error("Not able to enter data on searchBar");
             test.log(Status.FAIL, "Not able to enter data on searchBar");
+            Screenshot.captureScreenShot("Enter data fail");
         }
     }
 
@@ -120,6 +128,7 @@ public class ElcCars {
         } catch (AssertionError e) {
             LoggerHandler.error("Not able to verify Cars");
             test.log(Status.FAIL, "Cars not verified");
+            Screenshot.captureScreenShot("Verification fail");
         }
     }
 
@@ -135,13 +144,13 @@ public class ElcCars {
             helper.wait(ElcCarsHomePageLocator.showMore);
             helper.clickOnElement(ElcCarsHomePageLocator.showMore);
             String x = helper.getText(ElcCarsHomePageLocator.toyCars);
-            System.out.println(x);
             Assert.assertTrue(x.contains(ExcelReader.readData(System.getProperty(commonPath)+dirPath, sheetName, 9, 1)));
             LoggerHandler.info("Clicked on show more");
             test.log(Status.PASS, "Clicked on show more");
         } catch (AssertionError | Exception e) {
             LoggerHandler.error("Not able to click on show more");
             test.log(Status.FAIL, "Not able to click on show more");
+            Screenshot.captureScreenShot("show more");
         } 
     }
 
@@ -156,14 +165,15 @@ public class ElcCars {
         try {
             helper.wait(ElcCarsHomePageLocator.toyCars);
             helper.clickOnElement(ElcCarsHomePageLocator.toyCars);
+            Thread.sleep(500);
             String x = helper.getText(ElcCarsHomePageLocator.imaginativePlay);
-            System.out.println(x);
             Assert.assertTrue(x.contains(ExcelReader.readData(System.getProperty(commonPath)+dirPath, sheetName, 9, 2)));
             LoggerHandler.info("Clicked on Toy Cars");
             test.log(Status.PASS, "Clicked on Toy Cars");
         } catch (AssertionError | Exception e) {
             LoggerHandler.error("Not able to click on Toy Cars");
             test.log(Status.FAIL, "Not able to click on Toy Cars");
+            Screenshot.captureScreenShot("toy car");
         } 
     }
 
@@ -179,13 +189,13 @@ public class ElcCars {
             helper.wait(ElcCarsHomePageLocator.imaginativePlay);
             helper.clickOnElement(ElcCarsHomePageLocator.imaginativePlay);
             String x = helper.getText(ElcCarsHomePageLocator.fineMotorSkills);
-            System.out.println(x);
             Assert.assertTrue(x.contains(ExcelReader.readData(System.getProperty(commonPath)+dirPath, sheetName, 9, 3)));
             LoggerHandler.info("Clicked on Imaginative Play");
             test.log(Status.PASS, "Clicked on Imaginative Play");
         } catch (AssertionError | Exception e) {
             LoggerHandler.error("Not able to click on Imaginative Play");
             test.log(Status.FAIL, "Not able to click on Imaginative Play");
+            Screenshot.captureScreenShot("Imaginative play");
         } 
     }
 
@@ -201,13 +211,13 @@ public class ElcCars {
             helper.wait(ElcCarsHomePageLocator.fineMotorSkills);
             helper.clickOnElement(ElcCarsHomePageLocator.fineMotorSkills);
             String x = helper.getText(ElcCarsHomePageLocator.selected);
-            System.out.println(x);
             Assert.assertTrue(x.contains(ExcelReader.readData(System.getProperty(commonPath)+dirPath, sheetName, 9, 4)));
             LoggerHandler.info("Clicked on Fine Motor Skill");
             test.log(Status.PASS, "Clicked on Fine Motor Skill");
         } catch (AssertionError | Exception e) {
             LoggerHandler.error("Not able to click on Fine Motor Skill");
             test.log(Status.FAIL, "Not able to click on Fine Motor Skill");
+            Screenshot.captureScreenShot("Fine motor skill");
         } 
     }
 
@@ -224,13 +234,13 @@ public class ElcCars {
             helper.wait(ElcCarsHomePageLocator.firstProduct);
             helper.clickOnElement(ElcCarsHomePageLocator.firstProduct);
             String x = helper.getText(ElcCarsFirstProductLocator.wishlist);
-            System.out.println(x);
             Assert.assertTrue(x.contains(ExcelReader.readData(System.getProperty(commonPath)+dirPath, sheetName, 9, 5)));
             LoggerHandler.info("Clicked on First Product");
             test.log(Status.PASS, "Clicked on First Product");
         } catch (AssertionError | Exception e) {
             LoggerHandler.error("Not able to click on First Product");
             test.log(Status.FAIL, "Not able to click on First Product");
+            Screenshot.captureScreenShot("first product");
         } 
     }
 
@@ -250,6 +260,7 @@ public class ElcCars {
         } catch (Exception e) {
             LoggerHandler.error("Not able to click on Wishlist");
             test.log(Status.FAIL, "Not able to click on Wishlist");
+            Screenshot.captureScreenShot("Wishlist");
         } 
     }
 
@@ -263,9 +274,12 @@ public class ElcCars {
     public void back(){
         try {
             Base.driver.navigate().back();
+            Screenshot.captureScreenShot("ELC");
+            Reporter.attachScreenshotToReport("Elc", test, "Screenshot attached");
         } catch (Exception e) {
             LoggerHandler.error("Not able to move back");
             test.log(Status.FAIL, "Not able to move back");
+            Screenshot.captureScreenShot("Back");
         }
     }
 
