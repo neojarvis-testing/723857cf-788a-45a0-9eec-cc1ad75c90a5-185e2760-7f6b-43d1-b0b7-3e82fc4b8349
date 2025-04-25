@@ -80,7 +80,7 @@ public static By verifyminutes=By.id("js-store-availability-text");
     //Pratham
     //testcase8
     public static By popup = By.cssSelector(".dy-lb-close");
-    public static By searchBar = By.id("autocomplete-0-input");
+    public static By searchBarHomePage = By.id("autocomplete-0-input");
     //testcase9 
     public static By contactUs = By.cssSelector(" div[class='container-fluid'] a[href='https://theentertainer.zendesk.com/hc/en-gb/articles/6495305266833-Contact-Us']");
     public static By delivery = By.cssSelector(" div[class='container-fluid'] a[title='Delivery Options']");
