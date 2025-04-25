@@ -20,7 +20,7 @@ public class ElcCars {
     ExtentTest test;
     WebDriverHelper helper;
     public static final String sheetName="Sheet1";
-    public static final String dirPath ="/testData/ELCData.xlsx";
+    public static final String dirPath ="/testdata/ELCData.xlsx";
     public static final String commonPath = "user.dir";
     public ElcCars(ExtentTest test){
         helper= new WebDriverHelper(Base.driver);
@@ -74,7 +74,7 @@ public class ElcCars {
             helper.wait(HomePageLocators.searchBarHomePage);
             helper.clickOnElement(HomePageLocators.searchBarHomePage);
             LoggerHandler.info("Clicked on searchBar");
-            test.log(Status.INFO, "Clicked on searchBar");
+            test.log(Status.PASS, "Clicked on searchBar");
         } catch (Exception e) {
             LoggerHandler.error("Not able to click on searchBar");
             test.log(Status.FAIL, "Not able to click on searchBar");
@@ -116,7 +116,7 @@ public class ElcCars {
             String x = Base.driver.getCurrentUrl();
             Assert.assertTrue(x.contains(ExcelReader.readData(System.getProperty(commonPath)+dirPath, sheetName, 9, 0)));
             LoggerHandler.info("Verified Cars");
-            test.log(Status.INFO, "Cars verified");
+            test.log(Status.PASS, "Cars verified");
         } catch (AssertionError e) {
             LoggerHandler.error("Not able to verify Cars");
             test.log(Status.FAIL, "Cars not verified");
@@ -135,9 +135,10 @@ public class ElcCars {
             helper.wait(ElcCarsHomePageLocator.showMore);
             helper.clickOnElement(ElcCarsHomePageLocator.showMore);
             String x = helper.getText(ElcCarsHomePageLocator.toyCars);
+            System.out.println(x);
             Assert.assertTrue(x.contains(ExcelReader.readData(System.getProperty(commonPath)+dirPath, sheetName, 9, 1)));
             LoggerHandler.info("Clicked on show more");
-            test.log(Status.INFO, "Clicked on show more");
+            test.log(Status.PASS, "Clicked on show more");
         } catch (AssertionError | Exception e) {
             LoggerHandler.error("Not able to click on show more");
             test.log(Status.FAIL, "Not able to click on show more");
@@ -156,6 +157,7 @@ public class ElcCars {
             helper.wait(ElcCarsHomePageLocator.toyCars);
             helper.clickOnElement(ElcCarsHomePageLocator.toyCars);
             String x = helper.getText(ElcCarsHomePageLocator.imaginativePlay);
+            System.out.println(x);
             Assert.assertTrue(x.contains(ExcelReader.readData(System.getProperty(commonPath)+dirPath, sheetName, 9, 2)));
             LoggerHandler.info("Clicked on Toy Cars");
             test.log(Status.PASS, "Clicked on Toy Cars");
@@ -177,6 +179,7 @@ public class ElcCars {
             helper.wait(ElcCarsHomePageLocator.imaginativePlay);
             helper.clickOnElement(ElcCarsHomePageLocator.imaginativePlay);
             String x = helper.getText(ElcCarsHomePageLocator.fineMotorSkills);
+            System.out.println(x);
             Assert.assertTrue(x.contains(ExcelReader.readData(System.getProperty(commonPath)+dirPath, sheetName, 9, 3)));
             LoggerHandler.info("Clicked on Imaginative Play");
             test.log(Status.PASS, "Clicked on Imaginative Play");
@@ -198,6 +201,7 @@ public class ElcCars {
             helper.wait(ElcCarsHomePageLocator.fineMotorSkills);
             helper.clickOnElement(ElcCarsHomePageLocator.fineMotorSkills);
             String x = helper.getText(ElcCarsHomePageLocator.selected);
+            System.out.println(x);
             Assert.assertTrue(x.contains(ExcelReader.readData(System.getProperty(commonPath)+dirPath, sheetName, 9, 4)));
             LoggerHandler.info("Clicked on Fine Motor Skill");
             test.log(Status.PASS, "Clicked on Fine Motor Skill");
@@ -220,9 +224,10 @@ public class ElcCars {
             helper.wait(ElcCarsHomePageLocator.firstProduct);
             helper.clickOnElement(ElcCarsHomePageLocator.firstProduct);
             String x = helper.getText(ElcCarsFirstProductLocator.wishlist);
+            System.out.println(x);
             Assert.assertTrue(x.contains(ExcelReader.readData(System.getProperty(commonPath)+dirPath, sheetName, 9, 5)));
             LoggerHandler.info("Clicked on First Product");
-            test.log(Status.INFO, "Clicked on First Product");
+            test.log(Status.PASS, "Clicked on First Product");
         } catch (AssertionError | Exception e) {
             LoggerHandler.error("Not able to click on First Product");
             test.log(Status.FAIL, "Not able to click on First Product");

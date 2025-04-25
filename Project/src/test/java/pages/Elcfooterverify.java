@@ -2,6 +2,8 @@ package pages;
 
 
 
+import java.util.logging.Logger;
+
 import org.junit.Assert;
 
 import com.aventstack.extentreports.ExtentTest;
@@ -18,7 +20,7 @@ public class Elcfooterverify {
     ExtentTest test;
     WebDriverHelper helper;
     public static final String sheetsName = "Sheet1";
-    public static final String dirsPath = "/testData/ELCData.xlsx";
+    public static final String dirsPath = "/testdata/ELCData.xlsx";
     public static final String userCommonPath ="user.dir" ;
     
     public Elcfooterverify(ExtentTest test){
@@ -57,7 +59,7 @@ public class Elcfooterverify {
             helper.wait(HomePageLocators.contactUs);
             helper.clickOnElement(HomePageLocators.contactUs);
             LoggerHandler.info("Clicked on Contact us");
-            test.log(Status.INFO, "Clicked on Contacts us");
+            test.log(Status.PASS, "Clicked on Contacts us");
         } catch (InterruptedException e) {
             LoggerHandler.error("Not able to click on Contact us");
             test.log(Status.FAIL, "Not able to clicks on Contact us");
@@ -98,7 +100,7 @@ public class Elcfooterverify {
             helper.wait(HomePageLocators.delivery);
             helper.clickOnElement(HomePageLocators.delivery);
             LoggerHandler.info("Clicked on Delivery options");
-            test.log(Status.INFO, "Clicked on Delivery option");
+            test.log(Status.PASS, "Clicked on Delivery option");
         } catch (Exception e) {
             LoggerHandler.error("Not able to click on Delivery option");
             test.log(Status.FAIL, "Not able to click on Delivery options");
@@ -139,7 +141,7 @@ public class Elcfooterverify {
             helper.wait(HomePageLocators.productSafety);
             helper.clickOnElement(HomePageLocators.productSafety);
             LoggerHandler.info("Clicked on Products Safety Notices");
-            test.log(Status.INFO, "Clicked on Product Safety Notices");
+            test.log(Status.PASS, "Clicked on Product Safety Notices");
         } catch (Exception e) {
             LoggerHandler.error("Not able to click on Products Safety Notices");
             test.log(Status.FAIL, "Not able to click on Product Safety Notices");
@@ -180,7 +182,7 @@ public class Elcfooterverify {
             helper.wait(HomePageLocators.returns);
             helper.clickOnElement(HomePageLocators.returns);
             LoggerHandler.info("Clicked on Returns");
-            test.log(Status.INFO, "Clicked on Return");
+            test.log(Status.PASS, "Clicked on Return");
         } catch (Exception e) {
             LoggerHandler.error("Not able to click on Returns");
             test.log(Status.FAIL, "Not able to click on Return");
@@ -198,6 +200,7 @@ public class Elcfooterverify {
         try {
             String str = Base.driver.getTitle();
             String x = Base.driver.getCurrentUrl();
+            System.out.println(x);
             Assert.assertEquals(x,ExcelReader.readData(System.getProperty(userCommonPath)+dirsPath, sheetsName, 10, 3));
             LoggerHandler.info("Verified Returns URL");
             test.log(Status.PASS, "Verified Return URL");
@@ -221,7 +224,7 @@ public class Elcfooterverify {
             helper.wait(HomePageLocators.trackYourOrder);
             helper.clickOnElement(HomePageLocators.trackYourOrder);
             LoggerHandler.info("Clicked on Track your Orders");
-            test.log(Status.INFO, "Clicked on Track your Order");
+            test.log(Status.PASS, "Clicked on Track your Order");
         } catch (Exception e) {
             LoggerHandler.error("Not able to click on Track your Orders");
             test.log(Status.FAIL, "Not able to click on Track your Order");
@@ -259,10 +262,11 @@ public class Elcfooterverify {
     public void clickOnHelpCentre(){
         try {
             helper.scrollToFooter();
+            LoggerHandler.info("scroll down to footer");
             helper.wait(HomePageLocators.helpCenter);
             helper.clickOnElement(HomePageLocators.helpCenter);
             LoggerHandler.info("Clicked on Help Centre");
-            test.log(Status.INFO, "Clicked on Help Centres");
+            test.log(Status.PASS, "Clicked on Help Centres");
         } catch (Exception e) {
             LoggerHandler.error("Not able to click on Help Centre");
             test.log(Status.FAIL, "Not able to click on Help Centres");
@@ -303,7 +307,7 @@ public class Elcfooterverify {
             helper.wait(HomePageLocators.privacyPolicy);
             helper.clickOnElement(HomePageLocators.privacyPolicy);
             LoggerHandler.info("Clicked on Your Privacy");
-            test.log(Status.INFO, "Clicked on Your Privacy");
+            test.log(Status.PASS, "Clicked on Your Privacy");
         } catch (Exception e) {
             LoggerHandler.error("Not able to click on Your Privacy");
             test.log(Status.FAIL, "Not able to click on Your Privacy");
@@ -344,7 +348,7 @@ public class Elcfooterverify {
             helper.wait(HomePageLocators.howToComplain);
             helper.clickOnElement(HomePageLocators.howToComplain);
             LoggerHandler.info("Clicked on How to Complain");
-            test.log(Status.INFO, "Clicked on How to Complain");
+            test.log(Status.PASS, "Clicked on How to Complain");
         } catch (Exception e) {
             LoggerHandler.error("Not able to click on How to Complain");
             test.log(Status.FAIL, "Not able to click on How to Complain");
