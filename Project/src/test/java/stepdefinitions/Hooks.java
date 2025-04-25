@@ -32,13 +32,8 @@ public class Hooks extends Base {
     */
     @Before
     public  void open(){
-        try {
-            openBrowser();
-            Thread.sleep(500);
-            Base.driver.navigate().refresh();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        };
+        openBrowser();
+        driver.navigate().refresh();
     }
     /*  
         A. Method name : close
