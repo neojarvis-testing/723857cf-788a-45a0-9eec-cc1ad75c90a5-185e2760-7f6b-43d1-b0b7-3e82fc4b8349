@@ -22,14 +22,12 @@ public class LoggerHandler {
             logger.error(e);
         }
     }
-
     /*Method Name:trace
      * Author Name:C Sai Kiran
      * Description: This methods helps to log detailed information.
      * Parameters:Message
      * return type:void
      */
-    
     public static void trace(String message)
     {
         try {
