@@ -8,7 +8,7 @@ public class PawPatrol5Locators {
     public static By ClickPlaysetsActions = By.xpath("(//span[@class='facet__text'])[2]");
     public static By VerifyNarrow = By.cssSelector("h4[class='hidden-sm hidden-xs']");
     public static By clickOnSavings = By.xpath("//span[text()='Savings']");
-    public static By ClickOnFirstProduct = By.cssSelector("div[class='details'] a[data-wasprice='49.99']");
+    public static By ClickOnFirstProduct = By.xpath("//a[text()='Paw Patrol Ultimate Rescue – Skye’s Ultimate Rescue Helicopter']");
     public static By VerifyAvailable = By.cssSelector("p[class='store-availability-text']");
     public static By ClickOnAddBasket = By.xpath("//button[@id='addToCartButton']");
     public static By ClickOnCheckOut = By.cssSelector("a[class='btn btn-primary btn-block add-to-cart-button']");

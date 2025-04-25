@@ -1,6 +1,6 @@
 package pages;
 
-import org.testng.Assert;
+import org.junit.Assert;
 
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
@@ -54,13 +54,17 @@ public void hoverOnBrands(){
         helper.hoverOverElement(PawPatrol5Locators.HoveronBrands);
         LoggerHandler.info("Successfully Hover on Brands");
         test.log(Status.PASS,"Succesfully Hover on Brands");
+        String data = helper.getText(PawPatrol5Locators.HoveronBrands);
+        String value=ExcelReader.readData(System.getProperty("user.dir")+"/testdata/ELCData.xlsx", "Sheet1", 6, 4);
+        Assert.assertEquals(data,value);
+        System.out.println(data);
+        Assert.assertEquals(data, data);
         
     } catch (Exception e) {
         System.out.println(e.getMessage());
         LoggerHandler.error("Failed to Hover on Brands");
         test.log(Status.FAIL,"Failed to Hover on Brands");
 
-        // TODO: handle exception
     }
     
 }
@@ -77,9 +81,7 @@ public void ClickOnPawPatrol(){
         helper.clickOnElement(PawPatrol5Locators.ClickOnPawPatrol);
         LoggerHandler.info("Successfully click on PawPatrol");
         test.log(Status.PASS,"Successfully click on PawPatrol");
-        
     } catch (Exception e) {
-        // TODO: handle exception
         System.out.println(e.getMessage());
         LoggerHandler.error("Failed to Click on PawPatrol");
         test.log(Status.FAIL,"Failed to Click on PawPatrol");
@@ -95,13 +97,12 @@ public void ClickOnPawPatrol(){
 public void verifyurl(){
     try {
         String value = helper.getUrl();
-        // String data=ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 6, 0);
-        Assert.assertEquals(value,value);
+        String data=ExcelReader.readData(System.getProperty("user.dir")+"/testdata/ELCData.xlsx", "Sheet1", 6, 0);
+        Assert.assertEquals(value,data);
         System.out.println(value);
         LoggerHandler.info("verify the url");
         test.log(Status.INFO,"verify the url");
     } catch (Exception e) {
-        // TODO: handle exception
         System.out.println(e.getMessage());
         LoggerHandler.error("Failed to Verify the Url");
         test.log(Status.FAIL,"Failed to Verify the Url");
@@ -139,9 +140,8 @@ public void ClickonPlaysetsAction(){
 public void VerifyNarrow(){
     try {
         String data = helper.getText(PawPatrol5Locators.VerifyNarrow);
-        // String value=ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 6, 1);
-        Assert.assertEquals(data,data);
-        System.out.println(data);
+        String value=ExcelReader.readData(System.getProperty("user.dir")+"/testdata/ELCData.xlsx", "Sheet1", 6, 1);
+        Assert.assertEquals(data,value);
         LoggerHandler.info("Successfully verifed the text Narrow");
         test.log(Status.PASS, "Successfully verifed the text Narrow");
         
@@ -202,8 +202,8 @@ public void VerifyAvailable(){
     try {
         helper.wait(PawPatrol5Locators.VerifyAvailable);
         String data = helper.getText(PawPatrol5Locators.VerifyAvailable);
-        String value=ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 6, 2);
-        Assert.assertTrue(data.contains(""));
+        String value=ExcelReader.readData(System.getProperty("user.dir")+"/testdata/ELCData.xlsx", "Sheet1", 6, 2);
+        Assert.assertTrue(data.contains(value));
         System.out.println(data);
         LoggerHandler.info("Successfully verifed the text Available");
         test.log(Status.PASS,"Successfully verifed the text Available");
@@ -264,11 +264,11 @@ public void verifyBasket(){
     try {
         helper.wait(PawPatrol5Locators.VerifyBasket);
         String data = helper.getText(PawPatrol5Locators.VerifyBasket);
-        String value=ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 6, 3);
-        Assert.assertEquals(data,data);
+        String value=ExcelReader.readData(System.getProperty("user.dir")+"/testdata/ELCData.xlsx", "Sheet1", 6, 3);
+        Assert.assertEquals(data,value);
         System.out.println(data);
         LoggerHandler.info("Successfully verifed the text Basket");
-        test.log(Status.INFO,"Successfully verifed the text Available");
+        test.log(Status.PASS,"Successfully verifed the text Available");
         Screenshot.captureScreenShot("Add to Basket");
     } catch (Exception e) {
         System.out.println(e.getMessage());
@@ -276,37 +276,5 @@ public void verifyBasket(){
         test.log(Status.FAIL,"Failed to Verify the text");
     }
 }
-/*
- * a.Method Name : TestPawPatrol
- * b.Author Name : Karthik
- * c.Description : Executes TestPawPatrol by calling relevant methods.
- * d.Return Type : void
- * e.Parameter List :None
- */
-    public void  TestPawPatrol(){
-        clickOnAcceptCookies();
-        hoverOnBrands();
-        ClickOnPawPatrol();
-        verifyurl();
-        ClickonPlaysetsAction();
-        VerifyNarrow();
-        ClickOnSavings();
-        ClickOnProduct();
-        VerifyAvailable();
-        ClickOnAddtoBasket();
-        ClickOnCheckOut();
-        verifyBasket();
 
-
-    }
-
-
-
-
-
-
-
-
-
-    
 }
