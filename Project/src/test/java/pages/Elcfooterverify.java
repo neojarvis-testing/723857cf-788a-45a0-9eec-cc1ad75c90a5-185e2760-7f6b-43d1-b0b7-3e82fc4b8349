@@ -4,7 +4,6 @@ import org.junit.Assert;
 
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
-
 import uistore.HomePageLocators;
 import utils.Base;
 import utils.ExcelReader;
@@ -24,7 +23,6 @@ public class Elcfooterverify {
         helper= new WebDriverHelper(Base.driver);
         this.test =test;
     }
-
 
     /*
      * a.Method Name: clickOnAccept
