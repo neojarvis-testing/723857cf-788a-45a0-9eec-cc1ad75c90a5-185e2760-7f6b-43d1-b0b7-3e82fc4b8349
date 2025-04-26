@@ -27,9 +27,9 @@ public void i_click_search_bar() {
     * Return Type : void
     * Parameter : None
     */
-@When("I send data")
-public void i_send_data() {
-  p.sendadata();
+@When("I send data {string}")
+public void i_send_data(String string) {
+  p.sendadata(string);
 }
 /*
     * Method name : i_perform_enter

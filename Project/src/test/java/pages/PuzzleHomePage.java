@@ -73,9 +73,9 @@ public class PuzzleHomePage {
     * Return Type : value
     * Parameter : None
     */
-    public void sendadata(){
+    public void sendadata(String value){
         try {
-            helper.sendData(HomePageLocators.searchbar,ExcelReader.readData(System.getProperty("user.dir")+"/testdata/ELCData.xlsx", "Sheet1", 1, 0)); 
+            helper.sendData(HomePageLocators.searchbar,value); 
             String url=Base.driver.getTitle();
             System.out.println(url);
             Assert.assertTrue(url.contains(ExcelReader.readData(System.getProperty("user.dir")+"/testdata/ELCData.xlsx", "Sheet1", 8, 1)));

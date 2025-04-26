@@ -31,7 +31,7 @@ public class HomePageLocators {
     public static By ElcLogo=By.cssSelector("div[class='banner__component banner']");
     // public static By Outdoortoys=By.cssSelector("a[title='Outdoor Toys']");
     public static By Outdoortoys=By.xpath("//a[@title='Outdoor Toys']");
-    public static By Bikes=By.cssSelector("a[title='Bikes']");
+    public static By Bikes=By.xpath("//a[text()='Bikes']");
 
     public static By verifyHome=By.xpath("//a[@title='Present Finder']");
 

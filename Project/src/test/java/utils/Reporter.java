@@ -60,7 +60,6 @@ public class Reporter extends Base {
             
         } catch (IOException e) {
             e.printStackTrace();
-            // TODO: handle exception
         }
         return destPath;
     }
@@ -78,7 +77,6 @@ public class Reporter extends Base {
             
         } catch (Exception e) {
             e.printStackTrace();
-            // TODO: handle exception
         }
     }
     

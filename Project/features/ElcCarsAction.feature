@@ -1,9 +1,10 @@
+@Car
 Feature: Exploring Car-Related Options
 	Scenario:  Validate car-related actions and verify navigation workflow.
 		Given I click on aceept.
 		When I verify the logo.
 		And I click on searchBar
-		And I enter data on serachBar.
+		And I enter data on serachBar "Cars".
 		And I verify cars Url.
 		And I click on showmore.
 		And I click on Toy cars.

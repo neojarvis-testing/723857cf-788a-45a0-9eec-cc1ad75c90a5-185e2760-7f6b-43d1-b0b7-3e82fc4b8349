@@ -1,8 +1,8 @@
-
+@Puzzle
 Feature:Elc Website Add to cart
 Scenario:Search and add product to wishlist
 When I click search bar
-And I send data
+And I send data "Puzzle"
 And I perform enter
 And I click on show more
 And I click jigsaw Puzzle

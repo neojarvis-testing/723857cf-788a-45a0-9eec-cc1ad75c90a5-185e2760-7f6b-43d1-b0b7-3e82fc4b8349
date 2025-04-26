@@ -54,9 +54,9 @@ public class ElcCarsStepdefinition {
      * d.Parameter: None
      * e.Return Type: void
      */
-    @When("I enter data on serachBar.")
-    public void i_enter_data_on_serach_bar() {
-        car.enterDataOnSearchBar();
+    @When("I enter data on serachBar {string}.")
+    public void i_enter_data_on_serach_bar(String string) {
+        car.enterDataOnSearchBar(string);
     }
 
     /* 

@@ -94,10 +94,10 @@ public class ElcCars {
      * d.Parameter: None
      * e.Return Type: void
      */
-    public void enterDataOnSearchBar(){
+    public void enterDataOnSearchBar(String value){
         try {
             helper.wait(HomePageLocators.searchBarHomePage);
-            helper.sendData(HomePageLocators.searchBarHomePage,ExcelReader.readData(System.getProperty(commonPath)+dirPath, sheetName, 0, 0));
+            helper.sendData(HomePageLocators.searchBarHomePage,value);
             Thread.sleep(500);
             helper.enterAction(HomePageLocators.searchBarHomePage);
             String x = helper.getText(ElcCarsHomePageLocator.verifyCar);
