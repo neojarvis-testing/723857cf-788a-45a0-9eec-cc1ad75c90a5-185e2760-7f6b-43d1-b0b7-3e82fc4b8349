@@ -26,11 +26,11 @@ jobs:
         env:
           GITHUB_TOKEN: >-
             723857cf-788a-45a0-9eec-cc1ad75c90a5-185e2760-7f6b-43d1-b0b7-3e82fc4b8349
-          SONAR_TOKEN: 811c9a490983734401ba4e491eaefc8bfa7281de
+          SONAR_TOKEN: 9d7592a215aa5d6c220de85460da10eef432ae2f
         run: >-
           mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
-          -Dsonar.projectKey=iamneo-production_723857cf-788a-45a0-9eec-cc1ad75c90a5-185e2760-7f6b-43d1-b0b7-3e82fc4b8349
-          -Dsonar.login=811c9a490983734401ba4e491eaefc8bfa7281de
+          -Dsonar.projectKey=neojarvis-testing_723857cf-788a-45a0-9eec-cc1ad75c90a5-185e2760-7f6b-43d1-b0b7-3e82fc4b8349
+          -Dsonar.login=9d7592a215aa5d6c220de85460da10eef432ae2f
       - name: Trigger API
         if: always()
         env:
