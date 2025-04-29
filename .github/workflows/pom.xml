@@ -2,12 +2,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.houari</groupId>
-    <artifactId>iamneo-production_723857cf-788a-45a0-9eec-cc1ad75c90a5-185e2760-7f6b-43d1-b0b7-3e82fc4b8349</artifactId>
+    <artifactId>neojarvis-testing_723857cf-788a-45a0-9eec-cc1ad75c90a5-185e2760-7f6b-43d1-b0b7-3e82fc4b8349</artifactId>
     <version>1.0-SNAPSHOT</version>
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
-        <sonar.organization>iamneo-production</sonar.organization>
+        <sonar.organization>neojarvis-testing</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
         <sonar.sources>Project/src</sonar.sources>
         <sonar.java.binaries>target</sonar.java.binaries>
